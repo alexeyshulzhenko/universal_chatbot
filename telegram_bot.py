@@ -21,6 +21,8 @@ class TelegramBot:
         self.token = env('T_TOKEN')
         self.user_id = env('USER_ID')
 
+        if(self.token == '' | self.user_id == ''):
+            raise Exception("No Environment Varibales")
 
     # Define a few command handlers. These usually take the two arguments update and
     # context.

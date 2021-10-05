@@ -9,8 +9,6 @@ cffi @ file:///Users/runner/miniforge3/conda-bld/cffi_1613413910603/work
 chardet @ file:///Users/runner/miniforge3/conda-bld/chardet_1610093454858/work
 clang==5.0
 click==8.0.1
-conda==4.10.3
-conda-package-handling @ file:///Users/runner/miniforge3/conda-bld/conda-package-handling_1602876806364/work
 cryptography @ file:///Users/runner/miniforge3/conda-bld/cryptography_1612993750122/work
 flatbuffers==1.12
 gast @ file:///home/conda/feedstock_root/build_artifacts/gast_1596839682936/work
