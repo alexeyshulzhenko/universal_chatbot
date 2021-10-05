@@ -19,10 +19,10 @@ class TelegramBot:
         #     l = f.read().split("\n")
         #     self.token = l[0]
         #     self.user_id = l[1]
-        self.token = os.environ['T_TOKEN']
-        self.user_id = os.environ['USER_ID']
+        self.token = str(os.environ['T_TOKEN'])
+        self.user_id = str(os.environ['USER_ID'])
 
-        if(self.token == '' | self.user_id == ''):
+        if(self.token == '' or self.user_id == ''):
             raise Exception("No Environment Varibales")
 
     # Define a few command handlers. These usually take the two arguments update and
