@@ -1,4 +1,5 @@
 import logging
+import os
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
@@ -18,8 +19,8 @@ class TelegramBot:
         #     l = f.read().split("\n")
         #     self.token = l[0]
         #     self.user_id = l[1]
-        self.token = env('T_TOKEN')
-        self.user_id = env('USER_ID')
+        self.token = os.environ['T_TOKEN']
+        self.user_id = os.environ['USER_ID']
 
         if(self.token == '' | self.user_id == ''):
             raise Exception("No Environment Varibales")
