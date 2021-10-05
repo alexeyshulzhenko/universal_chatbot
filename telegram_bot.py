@@ -14,11 +14,12 @@ class TelegramBot:
 
     def __init__(self):
         # Try to construct username and passwd
-        with open("auth.txt", "r") as f:
-            l = f.read().split("\n")
-            self.token = l[0]
-            self.user_id = l[1]
-
+        # with open("auth.txt", "r") as f:
+        #     l = f.read().split("\n")
+        #     self.token = l[0]
+        #     self.user_id = l[1]
+        self.token = env('T_TOKEN')
+        self.user_id = env('USER_ID')
 
 
     # Define a few command handlers. These usually take the two arguments update and
