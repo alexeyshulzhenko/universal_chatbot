@@ -46,17 +46,23 @@ class TelegramBot:
         update.message.reply_text(update.message.text)
 
 
+    def check_user_id(self):
+
+        return True
+
+
     def start_bot(self) -> None:
         """Start the bot."""
         # Create the Updater and pass it your bot's token.
         updater = Updater(self.token)
 
+        
         # Get the dispatcher to register handlers
         dispatcher = updater.dispatcher
 
         # on different commands - answer in Telegram
-        dispatcher.add_handler(CommandHandler("start", self.start))
-        dispatcher.add_handler(CommandHandler("help", self.help_command))
+        dispatcher.add_handler(CommandHandler("start", self.start, Filters.user(username=self.user_id)))
+        dispatcher.add_handler(CommandHandler("help", self.help_command, Filters.user(username=self.user_id)))
 
         # on non command i.e message - echo the message on Telegram
         dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, self.echo))
