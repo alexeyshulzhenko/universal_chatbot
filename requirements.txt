@@ -11,13 +11,13 @@ clang==5.0
 click==8.0.1
 cymem==2.0.5
 flatbuffers==1.12
-gcld3==3.0.13
 grpcio==1.41.0
 idna==3.2
 iniconfig==1.1.1
 Jinja2==3.0.2
 joblib==1.0.1
 keras==2.6.0
+langid==1.1.6
 Markdown==3.3.4
 MarkupSafe==2.0.1
 murmurhash==1.0.5
@@ -45,7 +45,6 @@ requests-oauthlib==1.3.0
 rsa==4.7.2
 six==1.16.0
 smart-open==5.2.1
-spirit-guess @ git+https://github.com/alvations/spirit-guess@c7d0df06084407821621f47f76a1eadee5b59df2
 srsly==2.4.1
 termcolor==1.1.0
 tflearn==0.5.0
