@@ -1,4 +1,3 @@
-import cld3
 import gcld3
 import re
 
