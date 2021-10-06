@@ -3,6 +3,8 @@ import os
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
+from bot_core import Message
+
 class TelegramBot:
 
     # Enable logging
@@ -14,11 +16,7 @@ class TelegramBot:
 
 
     def __init__(self):
-        # Try to construct username and passwd
-        # with open("auth.txt", "r") as f:
-        #     l = f.read().split("\n")
-        #     self.token = l[0]
-        #     self.user_id = l[1]
+        self.messge_class = Message()
         self.token = str(os.environ['T_TOKEN'])
         self.user_id = str(os.environ['USER_ID'])
 
@@ -43,7 +41,7 @@ class TelegramBot:
 
     def echo(self, update: Update, context: CallbackContext) -> None:
         """Echo the user message."""
-        update.message.reply_text(update.message.text)
+        update.message.reply_text(update.message.text + " Language: " + self.messge_class.check_language(update.message.text))
 
 
     def check_user_id(self):
@@ -65,7 +63,7 @@ class TelegramBot:
         dispatcher.add_handler(CommandHandler("help", self.help_command, Filters.user(username=self.user_id)))
 
         # on non command i.e message - echo the message on Telegram
-        dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, self.echo))
+        dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, self.echo, Filters.user(username=self.user_id)))
 
         # Start the Bot
         updater.start_polling()
