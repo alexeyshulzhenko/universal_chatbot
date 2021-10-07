@@ -41,7 +41,8 @@ class TelegramBot:
 
     def echo(self, update: Update, context: CallbackContext) -> None:
         """Echo the user message."""
-        update.message.reply_text(update.message.text + " Language: " + self.messge_class.check_language(update.message.text))
+        response = self.messge_class.process_message(update.message.text, update.effective_user.username, self.user_id)
+        update.message.reply_text(response)
 
 
     def check_user_id(self):
