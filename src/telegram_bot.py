@@ -3,7 +3,7 @@ import os
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-from bot_core import Message
+from src.bot_core import Message
 
 class TelegramBot:
 

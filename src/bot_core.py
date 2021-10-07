@@ -2,12 +2,12 @@
 import re
 import os
 import langid
-import mono_api
+from src.mono_api import MonoAPI
 
 
 class Message:
     
-    mono_api = mono_api.MonoAPI()
+    mono_api = MonoAPI()
 
     def check_language(self,text):
         url_re = r"\b(?:https?://|www\.)[a-z0-9-]+(\.[a-z0-9-]+)+(?:[/?].*)?"
