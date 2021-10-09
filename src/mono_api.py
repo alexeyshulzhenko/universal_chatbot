@@ -36,4 +36,4 @@ class MonoAPI:
         headers = {'X-Token': self.token}
         response = requests.get(url, headers=headers).json()
 
-        return "Hello"
+        return response['accounts']

@@ -4,12 +4,13 @@ import os
 import langid
 
 from src.mono_api import MonoAPI
-
+from src.bots.bot_en import botEn
 
 class Message:
     
     mono_api = MonoAPI()
-
+    
+    bot_en = botEn()
     def check_language(self,text):
         url_re = r"\b(?:https?://|www\.)[a-z0-9-]+(\.[a-z0-9-]+)+(?:[/?].*)?"
         new_text = re.sub(url_re, "", text)
@@ -28,7 +29,8 @@ class Message:
         if user == admin_user_id:
             language = self.check_language(text).split(',')[0].replace("'", "").replace("(", "")
             if language == "en":
-                answer = self.pick_command_en(text)
+                # answer = self.pick_command_en(text)
+                answer = self.bot_en.init(text)
             return answer
         else: 
             return "You are not authorised"
