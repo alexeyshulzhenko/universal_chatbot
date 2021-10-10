@@ -59,6 +59,21 @@
             "context": [
                 ""
             ]
+        },
+        {
+            "tag": "posibilities",
+            "patterns": [
+                "What can u do?",
+                "What can you do?",
+                "What  functions do you have?",
+                "What are your capabilities?"
+            ],
+            "responses": [
+                "I am basic Smart Asistant Bot. Anythong you want if it is not a blowjob"
+            ],
+            "context": [
+                ""
+            ]
         }
     ]
 }
