@@ -5,10 +5,10 @@ import pickle
 import numpy as np
 from tensorflow.keras.models import load_model
 
-model = load_model('src/bots/chatbot_model_en.h5')
-intents = json.loads(open('src/bots/intents_en.json').read())
-words = pickle.load(open('src/bots/words_en.pkl','rb'))
-classes = pickle.load(open('src/bots/classes_en.pkl','rb'))
+model = load_model('static/chatbot_model_en.h5')
+intents = json.loads(open('static/intents_en.json').read())
+words = pickle.load(open('static/words_en.pkl','rb'))
+classes = pickle.load(open('static/classes_en.pkl','rb'))
 
 class botEn:
     # preprocessamento input utente
